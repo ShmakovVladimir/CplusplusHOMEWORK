@@ -36,5 +36,5 @@ int main(){
     std::cout<<std::endl<<"Sorted array:"<<std::endl;
     intersectionSort(array,size);
     arrayOut(array,size);
-    
+    delete[] array;
 }

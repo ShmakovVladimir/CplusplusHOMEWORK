@@ -59,6 +59,6 @@ int main(){
     else
         std::cout<<std::endl<<"There is no such element";
     
-
+    delete[] array;
     return 0;
 }
