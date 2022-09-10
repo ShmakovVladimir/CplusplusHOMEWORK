@@ -32,7 +32,6 @@ int main(){
         std::cin>>array[i];
     }
     std::cout<<std::endl<<"Start array:"<<std::endl;
-
     arrayOut(array,size);
     std::cout<<std::endl<<"Sorted array:"<<std::endl;
     intersectionSort(array,size);
