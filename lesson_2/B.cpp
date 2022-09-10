@@ -37,4 +37,5 @@ int main(){
     intersectionSort(array,size);
     arrayOut(array,size);
     delete[] array;
+    return 0;
 }
