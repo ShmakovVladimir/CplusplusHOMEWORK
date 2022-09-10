@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 void swap(int* arr,int ind1,int ind2){
     int alpha = arr[ind1];
     arr[ind1] = arr[ind2];
