@@ -35,17 +35,21 @@ void matrixOutput(float* matrix,int firstDimention,int secondDimention){
 void steppedMatrix(float * matrix,int firstDimention,int secondDimention){
     for(int col = 0;col<std::min<int>(secondDimention,firstDimention);col++){
         int nonZeroString = col;
-        divStringByNumber(matrix,secondDimention,nonZeroString,matrix[translate(nonZeroString,col,secondDimention)]);
-        if(nonZeroString!=col)
-            swapStrings(matrix,secondDimention,nonZeroString,col);
-        for(int i = 0;i<firstDimention;i++){
-            if(i!=col){
-                subStrings(matrix,secondDimention,i,col,matrix[translate(i,col,secondDimention)]);
+        while(nonZeroString<firstDimention&&!matrix[translate(nonZeroString,col,secondDimention)])
+            nonZeroString++;
+        if(nonZeroString<firstDimention){
+            divStringByNumber(matrix,secondDimention,nonZeroString,matrix[translate(nonZeroString,col,secondDimention)]);
+            if(nonZeroString!=col)
+                swapStrings(matrix,secondDimention,nonZeroString,col);
+            for(int i = 0;i<firstDimention;i++){
+                if(i!=col){
+                    subStrings(matrix,secondDimention,i,col,matrix[translate(i,col,secondDimention)]);
+                }
             }
         }
     }  
-    std::cout<<std::endl;
-    matrixOutput(matrix,firstDimention,secondDimention);
+    // std::cout<<std::endl;
+    // matrixOutput(matrix,firstDimention,secondDimention);
 }
 
 int main(){
@@ -72,9 +76,13 @@ int main(){
     matrixOutput(systemMatrix,numberOfStrings,numberOfCol);
     std::cout<<std::endl;
     steppedMatrix(systemMatrix,numberOfStrings,numberOfCol);
-    matrixOutput(systemMatrix,numberOfStrings,numberOfCol);
-    std::cout<<std::endl;   
+    std::cout<<std::endl<<"Reduced matrix: " <<std::endl; 
 
+    matrixOutput(systemMatrix,numberOfStrings,numberOfCol);
+    std::cout<<std::endl<<"Solved"<<std::endl;
+    for(int i = 0;i<numberOfCol-1;i++){
+        std::cout<<"x"<<i+1<<" = "<<systemMatrix[translate(i,numberOfCol-1,numberOfCol)]<<std::endl;
+    }
     delete[] systemMatrix;
     return 0;
 }
