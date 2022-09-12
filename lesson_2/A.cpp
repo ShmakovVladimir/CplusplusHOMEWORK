@@ -1,76 +1,79 @@
 #include <iostream>
 #include <algorithm>
+
 void swap(float* a,float* b){
-    *a*=(*b); 
-    *b = (*a)/(*b); 
-    *a/=(*b);
+    float c = *a;
+    *a = *b;
+    *b = c;
 }
-int translate(int i,int j,int arraySecondDimentionLength){
-    return i*arraySecondDimentionLength+j;
+int translate(int i,int j,int secondDimention){
+    return i*secondDimention+j;
 }
-
-void multMatrixString(float* matrix,int secondDim,int string,float multiplier){
-    for(int col = 0;col<secondDim;col++){
-        matrix[translate(string,col,secondDim)]*=multiplier;
+void subStrings(float* matrix,int secondDimention,int string1,int string2,float cff){
+    for(int col = 0;col<secondDimention;col++){
+        matrix[translate(string1,col,secondDimention)]-=(cff*matrix[translate(string2,col,secondDimention)]);
     }
 }
-void subMatrixStrings(float* matrix,int firstDim,int secondDim,int string1,int string2,float multiplier){
-    for(int col = 0;col<secondDim;col++){
-        matrix[translate(string1,col,secondDim)]-=(matrix[translate(string2,col,secondDim)]*multiplier);
+void divStringByNumber(float* matrix,int secondDimention,int string,float number){
+    for(int col = 0;col<secondDimention;col++){
+        matrix[translate(string,col,secondDimention)]/=number;
     }
 }
-void steppedView(float* matrix,int firstDim, int secondDim){
-    //на <<диоганали>> матрицы ставим единицы
-    int maxQuadraticSize = std::max(firstDim,secondDim);
-    for(int col = 0;col<maxQuadraticSize;col++){
-        multMatrixString(matrix,secondDim,col,1/(matrix[translate(col,col,secondDim)]));
+void swapStrings(float* matrix,int secondDimention,int string1,int string2){
+    for(int col = 0;col<secondDimention;col++){
+        swap(&matrix[translate(string1,col,secondDimention)],&matrix[translate(string2,col,secondDimention)]);
     }
-    for(int col = 0;col<maxQuadraticSize;col++){
-        for(int i = 0;i<secondDim;i++){
-            if(col!=i){
-                subMatrixStrings(matrix,firstDim,secondDim,col,i,matrix[translate(col,col,secondDim)]);
-            }
-        }
-    }
-
 }
-
-void outputMatrix(float* matrix,int firstDim,int secondDim){
-    for(int i = 0;i<firstDim;i++){
-        for(int j = 0;j<secondDim;j++){
-            std::cout<<matrix[translate(i,j,secondDim)]<<" ";
+void matrixOutput(float* matrix,int firstDimention,int secondDimention){
+    for(int i = 0;i<firstDimention;i++){
+        for(int col = 0;col<secondDimention;col++){
+            std::cout<<matrix[translate(i,col,secondDimention)]<<"   ";
         }
         std::cout<<std::endl;
     }
 }
-
+void steppedMatrix(float * matrix,int firstDimention,int secondDimention){
+    for(int col = 0;col<std::min<int>(secondDimention,firstDimention);col++){
+        int nonZeroString = col;
+        divStringByNumber(matrix,secondDimention,nonZeroString,matrix[translate(nonZeroString,col,secondDimention)]);
+        if(nonZeroString!=col)
+            swapStrings(matrix,secondDimention,nonZeroString,col);
+        for(int i = 0;i<firstDimention;i++){
+            if(i!=col){
+                subStrings(matrix,secondDimention,i,col,matrix[translate(i,col,secondDimention)]);
+            }
+        }
+    }  
+    std::cout<<std::endl;
+    matrixOutput(matrix,firstDimention,secondDimention);
+}
 
 int main(){
-    int eqQ,variablesQ;
-    std::cout<<"Enter number of equations: ";
-    std::cin>>eqQ;
+    int numberOfCol,numberOfStrings;
     std::cout<<"Enter number of variables: ";
-    std::cin>>variablesQ;
-    int matrixColumnQ = variablesQ+1;
-    int matrixStringQ = eqQ; //в последней строке закодруем номера переменных
-    int systemMatrixArrayLength = matrixColumnQ*(matrixStringQ);
-    float* systemMatrix = new float[matrixColumnQ*eqQ];
-    for(int col = 0; col < matrixColumnQ;col++){
-        if(col == matrixColumnQ-1)
-            std::cout<<std::endl<<"Enter column of free variables: ";
+    std::cin>>numberOfCol;
+    numberOfCol++;
+    std::cout<<"Enter number of the equations: ";
+    std::cin>>numberOfStrings;
+    float* systemMatrix = new float[numberOfCol*numberOfStrings];
+    for(int col = 0;col<numberOfCol;col++){
+        if(col==numberOfCol-1)
+            std::cout<<"enter the b: ";
         else
-            std::cout<<std::endl<<"Enter a column of coefficients before x"<<col+1<<": ";
-        for(int i = 0;i<eqQ;i++){
-            std::cout<<"- :";
-            std::cin>>systemMatrix[translate(i,col,matrixColumnQ)];
+            std::cout<<"enter x"<<col+1<<" coefficients: ";
+    
+        for(int i = 0;i<numberOfStrings;i++){
+            std::cout<<"- : ";
+            std::cin>>systemMatrix[translate(i,col,numberOfCol)];
         }
+        std::cout<<std::endl;
     }
-    std::cout<<std::endl<<"Your extended system matrix is: "<<std::endl;
-    outputMatrix(systemMatrix,matrixStringQ,matrixColumnQ);
-    std::cout<<std::endl<<"stepped matrix is: "<<std::endl;
-    steppedView(systemMatrix,matrixStringQ,matrixColumnQ);
-    outputMatrix(systemMatrix,matrixStringQ,matrixColumnQ);
-
+    std::cout<<std::endl<<"Your system matrix is: "<<std::endl;
+    matrixOutput(systemMatrix,numberOfStrings,numberOfCol);
+    std::cout<<std::endl;
+    steppedMatrix(systemMatrix,numberOfStrings,numberOfCol);
+    matrixOutput(systemMatrix,numberOfStrings,numberOfCol);
+    std::cout<<std::endl;   
 
     delete[] systemMatrix;
     return 0;
