@@ -1,11 +1,3 @@
-# Занятие 2
-
-## Алгоритм поиска НОП
-![Alt Text](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2/pics/GCS.excalidraw.png)
-
-## Алгоритм бинарного поиска
-![Alt Text](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2/pics/binSearch.png)
-
 ## Ответы на контрольные вопросы
 
 ### Из каких сегментов состоит структура памяти процесса?
@@ -148,7 +140,3 @@ t1 function(const t* alpha)
 Мы уже поняли, что имеем доступ к виртуальному адресному пространству, выделенному для нашей программы. Если неаккуратно работать с указателями, можем получать ошибки и ожидать от программы некорректного поведения.
 
 Например - изменение данных сегмента kernel space приводит к ошибке segmentation error.
-
-
-
-
