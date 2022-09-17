@@ -15,4 +15,8 @@
 - [Бинарный поиск](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_2/C.cpp)
 - [Наибольшая общая подпоследовательность](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_2/D.cpp)
 
+### Урок 3
+- [Контрольные вопросы](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_3/questions.md)
+- [Cортировка слиянием](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_3/A.cpp)
+- [Нахождение собственных значений линейного функционала](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_3/B.cpp)
 
