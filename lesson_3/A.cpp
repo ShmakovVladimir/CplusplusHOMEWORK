@@ -5,6 +5,7 @@ void copyFromLeftToRight(int* arrayToBeCopied,int* arrayToCopyIn,int startIndex,
         arrayToCopyIn[i] = arrayToBeCopied[i-startIndex];
     }
 }
+
 void mergeSortedArrays(int* arr,int left,int right){
     int middle = left+(right-left)/2;
     int* mergedArray = new int[right-left+1];
@@ -35,6 +36,7 @@ void mergeSortedArrays(int* arr,int left,int right){
     copyFromLeftToRight(mergedArray,arr,left,right);
     delete[] mergedArray;
 }
+
 void mergeSort(int* arr,int left,int right){
     if(right-left){
         int middle = left+(right-left)/2;
@@ -51,6 +53,7 @@ void printArray(int* arr,int length){
         std::cout<<arr[i]<<"  ";
     }
 }
+
 int* enterArray(int length){
     int* arr = new int[length];
     std::cout<<std::endl;
@@ -60,6 +63,7 @@ int* enterArray(int length){
     }
     return arr;
 }
+
 int* randomArray(int length,int maxValue = 100){
     int* arr = new int[length];
     for(int i = 0;i<length;i++){
@@ -67,6 +71,7 @@ int* randomArray(int length,int maxValue = 100){
     }
     return arr;
 }
+
 void keyboardInputMode(){
     int arrayLength;
     std::cout<<"enter your array length: ";
@@ -79,6 +84,7 @@ void keyboardInputMode(){
     printArray(array,arrayLength);
     delete[] array;
 }
+
 void randomInputMode(){
     int arrayLength = rand()%30;
     int* array = randomArray(arrayLength);
@@ -89,6 +95,7 @@ void randomInputMode(){
     printArray(array,arrayLength);
     delete[] array;
 }
+
 int main(int argc,char* argv[]){
     int randomInputModeCodeSeries = atoi("-random");
     if(argc<=1)
