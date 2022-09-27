@@ -25,5 +25,5 @@
 - [Cтруктурная задумка](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/A.cpp)
 - [Студенты на занятиях](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/B.cpp)
 - [Дата и время](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/C.cpp)
-- [Дни в месяце](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/D.cpp)
+- [Количество дней](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/D.cpp)
 
