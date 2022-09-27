@@ -91,7 +91,6 @@ int main(){
     student[7] = new Student("Shmakov Vladimir",1,2000);
     student[8] = new Student("Svirelkin Georgiy",1,2000);
     student[9] = new Student("Kent is zhata",0,1);
-
     student[9]->addLesson(lessons[0]);
     student[0]->addLesson(lessons[2]);
     student[5]->addLesson(lessons[2]);
