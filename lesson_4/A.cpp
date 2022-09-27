@@ -3,7 +3,7 @@
 template <typename T>
 struct vector{
 	int N; //количество строк
-	T* vectorElements;
+	T* vectorElements; //элементы вектора, хранящиеся в динамическом массиве
 	vector(int N){
 		this->N = N;
 		this->vectorElements = new T[this->N];
@@ -26,6 +26,17 @@ struct vector{
 		}
 		return result;
 	}
+	vector<T> operator+(const vector<T>& vectorToAdd){
+		T* resultVectorElemtns = new T[this->N];
+		for(int i = 0;i < this->N; i++){
+				resultVectorElemtns[i] = this->vectorElements[i]+vectorToAdd.vectorElements[i];
+		}
+		vector<T> result(this->N);
+		result.vectorElements = resultVectorElemtns;
+		return result;
+				
+	}
+	
 };
 
 
@@ -45,7 +56,10 @@ int main()
 	*v2[2] = 10;
 	std::cout<<std::endl<<"Vector 2"<<std::endl;
 	v2.printVector();
-	std::cout<<std::endl<<"Result of dot product:"<<std::endl;
+	std::cout<<std::endl<<"Result of dot product (v1,v2):"<<std::endl;
 	std::cout<<v1*v2;
+	std::cout<<std::endl<<"Sum of vector1 and vector2:"<<std::endl;
+	auto v3 = v1+v2;
+	v3.printVector();
 	return 0;
 }

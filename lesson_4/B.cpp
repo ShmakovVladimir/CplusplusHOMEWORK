@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
 
-
+struct Student;
 struct Lesson
 {
     std::string name;
@@ -27,13 +27,11 @@ struct Lesson
     ~Lesson(){
         delete[] this->studentsOnThisLesson;
     }
-    void printStudents(){
-        std::cout<<this->name<<" :"<<std::endl;
-        for(int i = 0;i<this->maxStudentQ&&this->studentsOnThisLesson[i];i++){
-            std::cout<<this->studentsOnThisLesson[i]->name<<std::endl;
-        }
-    }
+	void printStudents();
+    
 };
+
+
 
 struct Student
 {
@@ -69,7 +67,12 @@ struct Student
 
 };
 
-
+void Lesson::printStudents(){
+		std::cout<<"Lesction: "<<this->name<<"  Auditory: "<<this->place<<" Teacher: "<<this->teacherName<<std::endl;
+		for(int i = 0;i<this->maxStudentQ&&this->studentsOnThisLesson[i];i++){
+			std::cout<<this->studentsOnThisLesson[i]->name<<" course: "<<this->studentsOnThisLesson[i]->course<<std::endl;
+		}
+	}
 
 
 int main(){
@@ -95,11 +98,23 @@ int main(){
     student[1]->addLesson(lessons[2]); //ох не повезло не повезло
     student[2]->addLesson(lessons[0]);
     student[7]->addLesson(lessons[2]);
+	student[0]->addLesson(lessons[1]);
+	student[6]->addLesson(lessons[1]);
+	student[5]->addLesson(lessons[1]);
+	student[8]->addLesson(lessons[1]);
+	student[7]->addLesson(lessons[1]);
     for(int i =0;i<3;i++){
         lessons[i]->printStudents();
         std::cout<<std::endl;
     }
-
+	for(int i = 0;i<10;i++){
+		delete student[i];
+	}
+	for(int i = 0;i<3;i++){
+		delete lessons[i];
+	}
+	delete[] student;
+	delete[] lessons;
 
     return 0;
 }
