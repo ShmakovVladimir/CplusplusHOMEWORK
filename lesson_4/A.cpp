@@ -1,65 +1,51 @@
 #include <iostream>
+#include <math.h>
 
-template <typename T>
-struct vector{
-	int N; //количество строк
-	T* vectorElements; //элементы вектора, хранящиеся в динамическом массиве
-	vector(int N){
-		this->N = N;
-		this->vectorElements = new T[this->N];
+struct ComplexNumber{
+	ComplexNumber(float a,float b = 0): a{ a },b{ b }
+	{
+
 	}
-	~vector(){
-		delete[] this->vectorElements;	
+	void printNumber() const
+	{
+		std::cout<<std::endl<<a<<" + "<<b<<"*i";
 	}
-	T* operator[](int index){
-		return &(this->vectorElements[index]);
+	friend ComplexNumber operator+(const ComplexNumber& number1, const ComplexNumber& number2)
+	{
+		return ComplexNumber{number1.a+number2.a,number1.b+number2.b};
 	}
-	void printVector(){
-		for(int i = 0;i<this->N;i++){
-			std::cout<<this->vectorElements[i]<<"  ";
-		}
+	ComplexNumber operator+(const float numberToAdd) const
+	{
+		return ComplexNumber{a+numberToAdd,b};
 	}
-	T operator*(const vector& multVector){
-		T result = 0;
-		for(int i = 0;i<this->N;i++){
-			result+=this->vectorElements[i]*multVector.vectorElements[i];
-		}
-		return result;
+	float getAbsValue() const
+	{
+		return sqrt(pow(a,2)+pow(b,2));
 	}
-	vector<T> operator+(const vector<T>& vectorToAdd){
-		T* resultVectorElemtns = new T[this->N];
-		for(int i = 0;i < this->N; i++){
-				resultVectorElemtns[i] = this->vectorElements[i]+vectorToAdd.vectorElements[i];
-		}
-		vector<T> result(this->N);
-		result.vectorElements = resultVectorElemtns;
-		return result;
-				
+	ComplexNumber getMirror() const
+	{
+		return ComplexNumber{a,-b};
 	}
-	
+	float a;
+	float b;
 };
-
-
-
 
 int main()
 {
-	vector<int> v1(3);
-	vector<int> v2(3);
-	*v1[0] = 10;
-	*v1[2] = 20;
-	*v1[1] = 2;
-	std::cout<<std::endl<<"Vector 1"<<std::endl;
-	v1.printVector();
-	*v2[0] = 3;
-	*v2[1] = 4;
-	*v2[2] = 10;
-	std::cout<<std::endl<<"Vector 2"<<std::endl;
-	v2.printVector();
-	std::cout<<std::endl<<"Result of dot product (v1,v2):"<<std::endl;
-	std::cout<<v1*v2;
-	std::cout<<std::endl<<"Sum of vector1 and vector2:"<<std::endl;
-	auto v3 = v1+v2;
-	v3.printVector();
+	ComplexNumber alpha = {5,2};
+	ComplexNumber betta = {3,4};
+	int gamma = 5;
+	std::cout<<"First complex number(alpha) is:";
+	alpha.printNumber();
+	std::cout<<std::endl<<"Second complex number(betta) is:";
+	betta.printNumber();
+	std::cout<<std::endl<<"Result of alpha+betta: ";
+	(alpha+betta).printNumber();
+	std::cout<<std::endl<<"Non-complex number gamma is: "<<std::endl<<gamma;
+	std::cout<<std::endl<<"Result of alpha+gamma: ";
+	(alpha+gamma).printNumber();
+	std::cout<<std::endl<<"alpha absolute value is: "<<std::endl<<alpha.getAbsValue();
+	std::cout<<std::endl<<"betta mirrored complex number is: ";
+	betta.getMirror().printNumber();
 	return 0;
 }
