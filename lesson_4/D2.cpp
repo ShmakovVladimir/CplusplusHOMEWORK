@@ -2,7 +2,7 @@
 #include <math.h>
 
 struct ComplexNumber{
-	ComplexNumber(float a,float b)
+	ComplexNumber(float a,float b = 0)
 	{
 		init_data(a,b);
 	}

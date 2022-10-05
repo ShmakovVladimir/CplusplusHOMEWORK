@@ -1,11 +1,12 @@
 #include <iostream>
 
-enum Month{
+enum class Month
+{
     January,
-    February,
     March,
-    April,
     May,
+    February,
+    April,
     June,
     July,
     August,
@@ -16,38 +17,33 @@ enum Month{
 };
 
 
-int getMonthDays(Month month){
+int getMonthDays(Month month)
+{
     switch (month)
     {
+    case Month::March:
+    case Month::May:
+    case Month::July:
+    case Month::August:
+    case Month::October:
+    case Month::December:
     case Month::January:
         return 31;
     case Month::February:
         return 28;
-    case Month::March:
-        return 31;
+    case Month::June:
+    case Month::September:
+    case Month::November:
     case Month::April:
         return 30;
-    case Month::May:
-        return 31;
-    case Month::June:
-        return 30;
-    case Month::July:
-        return 31;
-    case Month::August:
-        return 31;
-    case Month::September:
-        return 30;
-    case Month::October:
-        return 31;
-    case Month::November:
-        return 30;
-    case Month::December:
-        return 31;
+    default:
+        return -1;
     }
 }
 
 
-int main(){
-    std::cout<<getMonthDays(Month::December)<<std::endl<<getMonthDays(Month::November);
+int main()
+{
+    std::cout<<getMonthDays(Month::December)<<std::endl<<getMonthDays(Month::November)<<std::endl<<getMonthDays(Month::September);
     return 0;
 }
