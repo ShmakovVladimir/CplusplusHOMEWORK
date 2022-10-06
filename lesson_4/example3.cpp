@@ -1,5 +1,4 @@
 #include <iostream>
-
 struct DateTime
 {
     void printDateAndTime() const
@@ -14,16 +13,9 @@ struct DateTime
     unsigned int second: 6;
 };
 
-
-
-int main(){
-    DateTime timeIDoMyHomework{2022,9,25,2,32,60};
-    // timeIDoMyHomework.year = 2022;
-    // timeIDoMyHomework.month = 9;
-    // timeIDoMyHomework.date = 25;
-    // timeIDoMyHomework.hour = 2;
-    // timeIDoMyHomework.min = 32;
-    // timeIDoMyHomework.second = 60;
-    timeIDoMyHomework.printDateAndTime();
+int main()
+{
+    DateTime time = {2022,10,2,5,8,0};
+    std::cout<<sizeof(time);
     return 0;
 }
