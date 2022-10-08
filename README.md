@@ -27,3 +27,13 @@
 - [Дата и время](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/C.cpp)
 - [Количество дней](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_4/D.cpp)
 
+### Урок 5
+
+- [Контрольные вопросы]()
+- Класс комплексного числа(задание 1)
+    - [пример использования класса main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/main.cpp)
+    - [заголовочный файл класса complex.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.h)
+    - [реализация методов класса complex.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.cpp)
+
+
+
