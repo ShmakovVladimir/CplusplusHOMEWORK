@@ -30,7 +30,7 @@
 ### Урок 5
 
 - [Контрольные вопросы]()
-- Класс комплексного числа(задание 1)
+- [Класс комплексного числа(задание 1)](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask)
     - [пример использования класса main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/main.cpp)
     - [заголовочный файл класса complex.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.h)
     - [реализация методов класса complex.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.cpp)
