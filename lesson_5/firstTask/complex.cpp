@@ -26,6 +26,10 @@ Complex Complex::operator+(const float& numberToAdd) const
 {
     return Complex(this->alpha+numberToAdd,this->betta);
 }
+Complex Complex::operator*(const float& numberToMult) const
+{
+    return Complex(this->alpha*numberToMult,this->betta*numberToMult);
+}
 float Complex::getAlpha() const
 {
     return this->alpha;

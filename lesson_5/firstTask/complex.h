@@ -9,6 +9,7 @@ class Complex
         Complex getMirrored() const;
         Complex operator+(const Complex& numberToAdd) const;
         Complex operator+(const float& numberToAdd) const;
+        Complex operator*(const float& numberToMult) const;
         float getAlpha() const;
         float getBetta() const;
         void setAlpha(const float& newAlpha);

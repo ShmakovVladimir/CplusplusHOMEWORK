@@ -10,6 +10,7 @@ int main()
     Complex gamma = alpha+betta;
     float r = 90;
     Complex epsilon = gamma+r;
+    Complex zetta = alpha*r;
     std::cout<<"alpha: ";
     alpha.print();
     std::cout<<std::endl<<"betta: ";
@@ -25,5 +26,7 @@ int main()
     epsilon.setAlpha(r);
     std::cout<<std::endl<<"epsilon alpha cff: "<<epsilon.getAlpha();
     std::cout<<std::endl<<"epsilon betta cff: "<<epsilon.getBetta();
+    std::cout<<std::endl<<"zetta = alpha*r: ";
+    zetta.print();
     return 0;
 }
