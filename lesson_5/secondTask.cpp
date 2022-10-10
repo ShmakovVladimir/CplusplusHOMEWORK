@@ -17,7 +17,7 @@ class Force
         double forceInNewton;
         static const double dinInNewton;
 };
-const double Force::dinInNewton = pow(10,-5);
+const double Force::dinInNewton = std::pow(10,-5);
 
 inline double Force::NewtonToSGS(double force) const
 {
