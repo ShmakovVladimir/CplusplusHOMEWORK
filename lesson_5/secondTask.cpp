@@ -1,34 +1,29 @@
 #include <iostream>
 #include <cmath>
-enum class Systems
-{
-    si,
-    sgs,
-    other
-};
+
 class Force
 {
     public:
         Force();
-        Force(float force);
-        Force(float force,Systems system);
-        float getForceInNewton() const;
-        float getForceInSGS() const;
-        float getForce(Systems system) const;
-        float setForceInNewton();
+        Force(double force);
+        double getForceInNewton() const;
+        double getForceInSGS() const;
+        void setForceInNewton(double force);
+        void setForceInSGS(double force);
+        void printForce() const;
     private:
-        float SGSToNewton(float force) const;
-        float NewtonToSGS(float force) const;
-        float forceInNewton;
-        static const float dinInNewton;
+        inline double SGSToNewton(double force) const;
+        inline double NewtonToSGS(double force) const;
+        double forceInNewton;
+        static const double dinInNewton;
 };
-const float Force::dinInNewton = pow(10,-5);
+const double Force::dinInNewton = pow(10,-5);
 
-float Force::NewtonToSGS(float force) const
+inline double Force::NewtonToSGS(double force) const
 {
     return force/dinInNewton;
 }
-float Force::SGSToNewton(float force) const
+inline double Force::SGSToNewton(double force) const
 {
     return force*dinInNewton; 
 }
@@ -36,47 +31,41 @@ Force::Force()
 {
 
 }
-Force::Force(float force): forceInNewton{force}
+Force::Force(double force): forceInNewton{force}
 {
 
 }
-Force::Force(float force,Systems system)
-{
-    switch(system)
-    {
-        case Systems::sgs:
-            forceInNewton = SGSToNewton(force);
-        case Systems::si:
-            forceInNewton = force;
-        default:
-            forceInNewton = force;
-    }
-}
-float Force::getForceInNewton() const
+
+double Force::getForceInNewton() const
 {
     return forceInNewton;
 }
-float Force::getForceInSGS() const
+double Force::getForceInSGS() const
 {
     return NewtonToSGS(forceInNewton);
 }
 
-float Force::getForce(Systems system) const
+void Force::setForceInNewton(double force)
 {
-    switch (system)
-    {
-    case Systems::si:
-       return getForceInNewton();
-    case Systems::sgs:
-        return getForceInSGS();
-    default:
-        return getForceInNewton();
-    }
+    forceInNewton = force;
 }
 
+void Force::setForceInSGS(double force)
+{
+    forceInNewton = SGSToNewton(force);
+}
+
+void Force::printForce() const
+{
+    std::cout<<std::endl<<"Force In Newton: "<<forceInNewton;
+    std::cout<<std::endl<<"Force In SGS: "<<NewtonToSGS(forceInNewton);
+}
 
 int main()
 {
-
+    Force alpha(100);
+    alpha.printForce();
+    alpha.setForceInSGS(20);
+    alpha.printForce();
     return 0;
 }

@@ -8,7 +8,7 @@ int main()
     Complex alpha(2,3);
     Complex betta(5,7);
     Complex gamma = alpha+betta;
-    float r = 90;
+    double r = 90;
     Complex epsilon = gamma+r;
     Complex zetta = alpha*r;
     std::cout<<"alpha: ";

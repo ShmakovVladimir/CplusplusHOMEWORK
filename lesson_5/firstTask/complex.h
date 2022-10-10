@@ -3,18 +3,18 @@
 class Complex
 {
     public:
-        Complex(float alpha,float betta);
+        Complex(double alpha,double betta);
         Complex();
         void print() const;
         Complex getMirrored() const;
         Complex operator+(const Complex& numberToAdd) const;
-        Complex operator+(const float& numberToAdd) const;
-        Complex operator*(const float& numberToMult) const;
-        float getAlpha() const;
-        float getBetta() const;
-        void setAlpha(const float& newAlpha);
-        void setBetta(const float& newBetta);
+        Complex operator+(const double& numberToAdd) const;
+        Complex operator*(const double& numberToMult) const;
+        double getAlpha() const;
+        double getBetta() const;
+        void setAlpha(const double& newAlpha);
+        void setBetta(const double& newBetta);
     private:
-        float alpha;
-        float betta;
+        double alpha;
+        double betta;
 };

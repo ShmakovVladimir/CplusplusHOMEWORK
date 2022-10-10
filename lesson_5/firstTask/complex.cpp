@@ -3,46 +3,45 @@
 
 void Complex::print() const
 {
-    std::cout<<this->alpha<<" + "<<this->betta<<"*i";
+    std::cout<<alpha<<" + "<<betta<<"*i";
 }
-Complex::Complex(float alpha,float betta): alpha{alpha},betta{betta}
+Complex::Complex(double alpha,double betta): alpha{alpha},betta{betta}
 {
 
 }
-Complex::Complex()
+Complex::Complex(): alpha {0},betta {0}
 {
-    this->alpha = 0;
-    this->betta = 0;
+    
 }
 Complex Complex::getMirrored() const
 {
-    return Complex(this->alpha,-1*this->betta);
+    return Complex(alpha,-1*betta);
 }
 Complex Complex::operator+(const Complex& numberToAdd) const
 {
-    return Complex(this->alpha+numberToAdd.alpha,this->betta+numberToAdd.betta);
+    return Complex(alpha+numberToAdd.alpha,betta+numberToAdd.betta);
 }
-Complex Complex::operator+(const float& numberToAdd) const
+Complex Complex::operator+(const double& numberToAdd) const
 {
-    return Complex(this->alpha+numberToAdd,this->betta);
+    return Complex(alpha+numberToAdd,betta);
 }
-Complex Complex::operator*(const float& numberToMult) const
+Complex Complex::operator*(const double& numberToMult) const
 {
-    return Complex(this->alpha*numberToMult,this->betta*numberToMult);
+    return Complex(alpha*numberToMult,betta*numberToMult);
 }
-float Complex::getAlpha() const
+double Complex::getAlpha() const
 {
-    return this->alpha;
+    return alpha;
 }
-float Complex::getBetta() const
+double Complex::getBetta() const
 {
-    return this->betta;
+    return betta;
 }
-void Complex::setAlpha(const float& newAlpha)
+void Complex::setAlpha(const double& newAlpha)
 {
-    this->alpha = newAlpha;
+    alpha = newAlpha;
 }
-void Complex::setBetta(const float& newBetta)
+void Complex::setBetta(const double& newBetta)
 {
-    this->betta = newBetta;
+    betta = newBetta;
 }
