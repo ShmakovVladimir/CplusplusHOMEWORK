@@ -29,11 +29,22 @@
 
 ### Урок 5
 
-- [Контрольные вопросы]()
+- [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/README.md)
 - [Класс комплексного числа(задание 1)](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask)
     - [пример использования класса main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/main.cpp)
     - [заголовочный файл класса complex.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.h)
     - [реализация методов класса complex.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.cpp)
 - ["Класс силы" - задание 2](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/secondTask.cpp)
+
+- [Ошибки линковщика - задание 4](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_5/taskFour)
+    - [Ошибка многократного определения alpha](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_5/taskFour/error1)
+        - [Хеадер с определением функции](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error1/alpha.h)
+        - [Файл 1](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error1/error1_file1.cpp)
+        - [Файл 2](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error1/error1_file2.cpp)
+    - [Ошибка с поиском определения](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_5/taskFour/error2)
+        - [Объявление функции](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error2/alpha.h)
+        - [Пытаемся использовать неопределённую функцию - файл определения в проект не включен](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error2/main.cpp)
+
+
 
 
