@@ -35,7 +35,7 @@
     - [заголовочный файл класса complex.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.h)
     - [реализация методов класса complex.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/firstTask/complex.cpp)
 - ["Класс силы" - задание 2](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/secondTask.cpp)
-
+- [Задание 3](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/thirdTask.cpp)
 - [Ошибки линковщика - задание 4](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_5/taskFour)
     - [Ошибка многократного определения alpha](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_5/taskFour/error1)
         - [Хеадер с определением функции](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error1/alpha.h)
