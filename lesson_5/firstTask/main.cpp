@@ -20,12 +20,12 @@ int main()
     gamma.print();
     std::cout<<std::endl<<"epsilon = gamma+r: ";
     epsilon.print();
-    std::cout<<std::endl<<"epsilon alpha cff: "<<epsilon.getAlpha();
-    std::cout<<std::endl<<"epsilon betta cff: "<<epsilon.getBetta();
+    std::cout<<std::endl<<"epsilon alpha cff: "<<epsilon.alpha;
+    std::cout<<std::endl<<"epsilon betta cff: "<<epsilon.betta;
     std::cout<<std::endl<<"Setting epsilon alpha cff = r";
-    epsilon.setAlpha(r);
-    std::cout<<std::endl<<"epsilon alpha cff: "<<epsilon.getAlpha();
-    std::cout<<std::endl<<"epsilon betta cff: "<<epsilon.getBetta();
+    epsilon.alpha = r;
+    std::cout<<std::endl<<"epsilon alpha cff: "<<epsilon.alpha;
+    std::cout<<std::endl<<"epsilon betta cff: "<<epsilon.betta;
     std::cout<<std::endl<<"zetta = alpha*r: ";
     zetta.print();
     return 0;

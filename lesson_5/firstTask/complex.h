@@ -8,13 +8,8 @@ class Complex
         void print() const;
         Complex getMirrored() const;
         Complex operator+(const Complex& numberToAdd) const;
-        Complex operator+(const double& numberToAdd) const;
-        Complex operator*(const double& numberToMult) const;
-        double getAlpha() const;
-        double getBetta() const;
-        void setAlpha(const double& newAlpha);
-        void setBetta(const double& newBetta);
-    private:
+        Complex operator+(const double numberToAdd) const;
+        Complex operator*(const double numberToMult) const;
         double alpha;
         double betta;
 };
