@@ -21,11 +21,11 @@ Complex Complex::operator+(const Complex& numberToAdd) const
 {
     return Complex(alpha+numberToAdd.alpha,betta+numberToAdd.betta);
 }
-Complex Complex::operator+(const double numberToAdd) const
+Complex Complex::operator+(double numberToAdd) const
 {
     return Complex(alpha+numberToAdd,betta);
 }
-Complex Complex::operator*(const double numberToMult) const
+Complex Complex::operator*(double numberToMult) const
 {
     return Complex(alpha*numberToMult,betta*numberToMult);
 }
