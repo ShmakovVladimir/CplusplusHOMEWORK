@@ -45,6 +45,10 @@
         - [Объявление функции](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error2/alpha.h)
         - [Пытаемся использовать неопределённую функцию - файл определения в проект не включен](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_5/taskFour/error2/main.cpp)
 
-
+### Урок 6
+- [Класс дроби - задание 2](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_6/task2)
+    - [Заголовочный файл класса](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_6/task2/fraction.h)
+    - [Файл с реализацией класса](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_6/task2/fraction.cpp)
+    - [Проверка работы класса - main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_6/task2/main.cpp)
 
 
