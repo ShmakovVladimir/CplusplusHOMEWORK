@@ -10,6 +10,9 @@ class Fraction
         Fraction();
         Fraction(const Fraction& fractionToCopy);
         Fraction(int a);
+        Fraction(double) = delete;
+        Fraction(char) = delete;
+        Fraction(float) = delete;
         Fraction operator+(const Fraction& fractionToAdd) const;
         friend std::ostream& operator<<(std::ostream& outObj,const Fraction& fractionToPrint);
         friend std::istream& operator>>(std::istream& inObj,Fraction& fractionToInput);
