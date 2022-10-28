@@ -22,11 +22,25 @@ Fraction::Fraction(int a): numerator{a} , denominator{1}
 
 
 
-Fraction Fraction::operator+(const Fraction& fractionToAdd) const
+// Fraction Fraction::operator+(const Fraction& fractionToAdd) const
+// {
+//     int resultNumerator = numerator*fractionToAdd.denominator+denominator*fractionToAdd.numerator;
+//     unsigned int resultDenomenator = denominator*fractionToAdd.denominator;
+//     return Fraction(resultNumerator,resultDenomenator).reduceFraction();
+// }
+
+Fraction operator+(const Fraction& fractionLeft,const Fraction& fractionRight)
 {
-    int resultNumerator = numerator*fractionToAdd.denominator+denominator*fractionToAdd.numerator;
-    unsigned int resultDenomenator = denominator*fractionToAdd.denominator;
-    return Fraction(resultNumerator,resultDenomenator).reduceFraction();
+   int resultNumerator = fractionLeft.numerator*fractionRight.denominator + fractionLeft.denominator*fractionRight.numerator;
+   unsigned int resultDenominator = fractionLeft.denominator*fractionRight.denominator;
+   return Fraction(resultNumerator,resultDenominator).reduceFraction(); 
+}
+
+Fraction operator-(const Fraction& fractionLeft,const Fraction& fractionRight)
+{
+    int resultNumerator = fractionLeft.numerator*fractionRight.denominator - fractionLeft.denominator*fractionRight.numerator;
+    unsigned int resultDenominator = fractionLeft.denominator*fractionRight.denominator;
+    return Fraction(resultNumerator,resultDenominator);
 }
 
 std::ostream& operator<<(std::ostream& outObj,const Fraction& fractionToPrint)
@@ -42,19 +56,28 @@ std::istream& operator>>(std::istream& inObj,Fraction& fractionToInput)
     return inObj;
 }
 
-Fraction Fraction::operator-(const Fraction& fractionToSub) const
-{
-    unsigned int resultDenominator = denominator*fractionToSub.denominator;
-    int resultNumerator = numerator*fractionToSub.denominator - fractionToSub.numerator*denominator;
-    return Fraction(resultNumerator,resultDenominator).reduceFraction();
+// Fraction Fraction::operator-(const Fraction& fractionToSub) const
+// {
+//     unsigned int resultDenominator = denominator*fractionToSub.denominator;
+//     int resultNumerator = numerator*fractionToSub.denominator - fractionToSub.numerator*denominator;
+//     return Fraction(resultNumerator,resultDenominator).reduceFraction();
     
+// }
+
+// Fraction Fraction::operator*(const Fraction& fractionToMult) const
+// {
+//     int resultNumerator = numerator*fractionToMult.numerator;
+//     unsigned int resultDenumerator = denominator*fractionToMult.denominator;
+//     return Fraction(resultNumerator,resultDenumerator).reduceFraction();
+// }
+Fraction operator*(const Fraction& fractionLeft,const Fraction& fractionRight)
+{
+    return Fraction(fractionLeft.numerator*fractionRight.numerator,fractionLeft.denominator*fractionRight.denominator).reduceFraction();
 }
 
-Fraction Fraction::operator*(const Fraction& fractionToMult) const
+Fraction operator/(const Fraction& fractionLeft,const Fraction& fractionRight)
 {
-    int resultNumerator = numerator*fractionToMult.numerator;
-    unsigned int resultDenumerator = denominator*fractionToMult.denominator;
-    return Fraction(resultNumerator,resultDenumerator).reduceFraction();
+    return fractionLeft*(fractionRight.getInverced());
 }
 
 Fraction& Fraction::reduceFraction()
@@ -90,21 +113,39 @@ bool operator==(const Fraction& fraction1,const Fraction& fraction2)
 }
 
 
-Fraction& operator+=(Fraction& fractionLeft,const Fraction& fractionRight)
+// Fraction& operator+=(Fraction& fractionLeft,const Fraction& fractionRight)
+// {
+//     fractionLeft = fractionLeft+fractionRight;
+//     return fractionLeft;
+// }
+
+// Fraction& operator-=(Fraction& fractionLeft,const Fraction& fractionRight)
+// {
+//     fractionLeft = fractionLeft-fractionRight;
+//     return fractionLeft;
+// }
+
+Fraction& Fraction::operator+=(const Fraction& fracitonToAdd)
 {
-    fractionLeft = fractionLeft+fractionRight;
-    return fractionLeft;
+    (*this) = (*this)+fracitonToAdd;
+    return (*this);
 }
 
-Fraction& operator-=(Fraction& fractionLeft,const Fraction& fractionRight)
+Fraction& Fraction::operator-=(const Fraction& fractionToSub)
 {
-    fractionLeft = fractionLeft-fractionRight;
-    return fractionLeft;
+    (*this) = (*this) - fractionToSub;
+    return (*this);
 }
 
 Fraction& Fraction::operator++()
 {
     numerator+=denominator;
+    return this->reduceFraction();
+}
+
+Fraction& Fraction::operator--()
+{
+    numerator-=denominator;
     return this->reduceFraction();
 }
 
@@ -115,6 +156,13 @@ Fraction Fraction::operator++(int)
     return temp;
 }
 
+Fraction Fraction::operator--(int)
+{
+    Fraction temp(*this);
+    --(*this);
+    return temp;
+}
+
 Fraction& Fraction::operator=(const Fraction& fractionToAssign)
 {
     numerator = fractionToAssign.numerator;
@@ -122,12 +170,22 @@ Fraction& Fraction::operator=(const Fraction& fractionToAssign)
     return (*this);
 }
 
-Fraction& Fraction::operator=(int a)
+Fraction Fraction::getInverced() const
 {
-    numerator = a;
-    denominator = 1;
-    return (*this);
+    if(!numerator)
+    {
+        std::cerr<<"Zero devision error";
+        abort();
+    }
+    Fraction invFraction = Fraction(denominator,numerator);
+    return invFraction;
 }
+// Fraction& Fraction::operator=(int a)
+// {
+//     numerator = a;
+//     denominator = 1;
+//     return (*this);
+// }
 
 Fraction::operator double() const
 {
