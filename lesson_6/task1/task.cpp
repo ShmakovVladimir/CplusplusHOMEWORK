@@ -5,7 +5,7 @@ Task::Task(): length {0}, arr{nullptr}
 {
 
 }
-Task::Task(unsigned int len,int* array): length{len},numbers{std::vector<int>(len)}
+Task::Task(int* array,std::size_t len): length{len},numbers{std::vector<int>(len)}
 {
     arr = new int[length];
     std::copy_n(array,length,arr);
@@ -30,7 +30,7 @@ std::ostream& operator<<(std::ostream& outObj,const Task& objToPrint)
     return outObj;
 }
 
-Task::Task(Task& objRight): length{objRight.length},numbers{objRight.numbers}
+Task::Task(const Task& objRight): length{objRight.length},numbers{objRight.numbers}
 {
     std::cout<<std::endl<<"copy"<<std::endl;
     arr = new int[length];
@@ -45,8 +45,10 @@ Task::Task(Task&& objRight): length{objRight.length},numbers{std::move(objRight.
     objRight.arr = nullptr;
 }
 
-Task& Task::operator=(Task& objToCopy)
+Task& Task::operator=(const Task& objToCopy)
 {
+    if(this == &objToCopy)
+        return (*this);
     std::cout<<std::endl<<"copy operator = "<<std::endl;
     length = objToCopy.length;
     numbers = objToCopy.numbers;
@@ -58,6 +60,8 @@ Task& Task::operator=(Task& objToCopy)
 
 Task& Task::operator=(Task&& objToBeMoved)
 {
+    if(this == &objToBeMoved)
+        return (*this);
     std::cout<<std::endl<<"move operator = "<<std::endl;
     length = objToBeMoved.length;
     delete[] arr;

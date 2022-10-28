@@ -14,8 +14,7 @@ int main()
         alpha[i] = i*10;
     for(int i = 0; i<length2;i++)
         beta[i] = (i+1)*5;
-    
-    Task o1(length,alpha);
+    Task o1(alpha,length);
     std::cout<<o1;
     Task o2 = std::move(o1);
     std::cout<<std::endl<<o2;
@@ -26,7 +25,7 @@ int main()
     o1 = std::move(o2);
     std::cout<<std::endl<<o1;
     std::cout<<std::endl<<o2;
-    o1 = Task(length,alpha);
+    o1 = Task(alpha,length);
     std::cout<<std::endl<<o1;
     delete[] alpha;
     delete[] beta;
