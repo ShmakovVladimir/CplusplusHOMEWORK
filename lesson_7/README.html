@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,user-scalable=no">
+<meta name="description" content="undefined - microjam page">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js/styles/vs.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/goessner/mdmath/themes/publication/style.css">
+
+<title>undefined</title>
+</head>
+<body id="top">
+<header>
+
+
+
+
+
+
+</header>
+<main>
+<h1 dir="auto" id="%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B">Контрольные вопросы</h1>
+<h3 dir="auto" id="%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D1%8B-%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0%D0%BC%D0%B8">Варианты отношений между классами</h3>
+<p dir="auto">Выделяют три основных варианта отношений между классами:</p>
+<ul dir="auto">
+<li dir="auto">Композиция</li>
+<li dir="auto">Наследование</li>
+<li dir="auto">Агрегация</li>
+<li dir="auto">Ассоциация</li>
+</ul>
+<h5 dir="auto" id="%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F">Композиция</h5>
+<p dir="auto"><strong>Композиция</strong> - вариант отношений между классами, при котором объект одного класса содержится в другом классе. То есть при создании объекта класса <code>A</code> будет также создаваться объект класса <code>B</code>.</p>
+<h5 dir="auto" id="%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Наследование</h5>
+<p dir="auto">Класс <code>A</code> является <strong>наследником</strong> класса <code>B</code>, если класс <code>A</code> содержит весь функционал класса <code>B</code>. При этом помимо &lt;&lt;наследованного&gt;&gt; функционала класс <code>A</code> может быть дополнен другим функционалом.</p>
+<p dir="auto">При вызове конструктора класса <code>A</code> сначала вызывается конструктор класса <code>B</code>, инициализирующий все &lt;&lt;наследованные&gt;&gt; поля. Затем вызывается конструктор класса <code>A</code>, цель которого инициализировать дополнительные поля и вернуть объект готового класса <code>A</code>.</p>
+<h5 dir="auto" id="%D0%B0%D0%B3%D1%80%D0%B5%D0%B3%D0%B0%D1%86%D0%B8%D1%8F">Агрегация</h5>
+<p dir="auto">При <strong>агрегации</strong> объект класса <code>A</code> создаётся вне класса <code>B</code>. Созданный объект передаётся в класс <code>A</code>.</p>
+<p dir="auto">При этом агрегация может быть двухсторонней и односторонней. Например объект класса <code>B</code> может быть передан в класс <code>A</code>, а объект класса <code>A</code> передан в класс <code>B</code>.</p>
+<h5 dir="auto" id="%D0%B0%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F">Ассоциация</h5>
+<p dir="auto"><strong>Ассоциация</strong> - вариант взаимоотношений, содержащий агрегацию и композицию. Другими словами - композиция и агрегация есть частный случай ассоциации.</p>
+<h3 dir="auto" id="%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B2%D0%B8%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">Разновидности наследования</h3>
+<p dir="auto">В целях инкапсуляции придуманы три вида наследования:</p>
+<ul dir="auto">
+<li dir="auto"><strong>private</strong></li>
+<li dir="auto"><strong>pritected</strong></li>
+<li dir="auto"><strong>public</strong></li>
+</ul>
+<p dir="auto"><strong>При всех типах наследования члены родительского класса, расположенные в <code>private</code> секции, являются недоступными для дочернего класса.</strong></p>
+<h5 dir="auto" id="public-%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Public наследование</h5>
+<p dir="auto">При <code>public</code> наследовании члены родительского класса, находящиеся в областях видимости <code>public</code> и <code>protected</code> переходят в области видимости <code>public</code> и <code>protected</code> дочернего класса:</p>
+<table dir="auto">
+<thead dir="auto">
+<tr dir="auto">
+<th>Спецификатор доступа в родительском классе</th>
+<th>Спецификатор доступа в дочернем классе</th>
+</tr>
+</thead>
+<tbody dir="auto">
+<tr dir="auto">
+<td>public</td>
+<td>public</td>
+</tr>
+<tr dir="auto">
+<td>protected</td>
+<td>protected</td>
+</tr>
+</tbody>
+</table>
+<h5 dir="auto" id="protected-%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Protected наследование</h5>
+<p dir="auto">При <code>protected</code> все области видимости кроме <code>private</code> становятся типа <code>protected</code>:</p>
+<table dir="auto">
+<thead dir="auto">
+<tr dir="auto">
+<th>Спецификатор доступа в родительском классе</th>
+<th>Спецификатор доступа в дочернем классе</th>
+</tr>
+</thead>
+<tbody dir="auto">
+<tr dir="auto">
+<td>public</td>
+<td>protected</td>
+</tr>
+<tr dir="auto">
+<td>protected</td>
+<td>protected</td>
+</tr>
+</tbody>
+</table>
+<h5 dir="auto" id="private-%D0%BD%D0%B0%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Private наследование</h5>
+<p dir="auto">При <code>private</code> наследовании секции <code>public</code> и <code>protected</code> становтся приватными:</p>
+<table dir="auto">
+<thead dir="auto">
+<tr dir="auto">
+<th>Спецификатор доступа в родительском классе</th>
+<th>Спецификатор доступа в дочернем классе</th>
+</tr>
+</thead>
+<tbody dir="auto">
+<tr dir="auto">
+<td>public</td>
+<td>private</td>
+</tr>
+<tr dir="auto">
+<td>protected</td>
+<td>private</td>
+</tr>
+</tbody>
+</table>
+<h3 dir="auto" id="%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8%D0%B8">Виртуальные функциии</h3>
+<p dir="auto">Функция называется <strong>виртуальной</strong>, если она предназначена для преопределения в классе наследнике.</p>
+<p dir="auto">Для корректного функционирования механизма необходимо:</p>
+<ul dir="auto">
+<li dir="auto">Переопределять виртуальные функции в классе наследнике.</li>
+<li dir="auto">При переопределении использовать ключевые слова:
+<ul dir="auto">
+<li dir="auto"><code>final</code> - в классах, являющихся последними в дереве наследования(финальное переопределение функции)</li>
+<li dir="auto"><code>override</code> - явно указываем на переопределение. Но в следуещем по цепочке наследования классе, функция так же может быть преопределена</li>
+</ul>
+</li>
+<li dir="auto">При объявлении <strong>чисто виртуальных функций</strong> - виртуальных функций не имеющих определения - явно указывать на это, используя синаксис <code>virtual type virtualFunc(arg) = 0</code>.</li>
+</ul>
+<h3 dir="auto" id="%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B">Виртуальные классы</h3>
+<p dir="auto">Класс называется виртуальным, если он создан для дальнейшего переопределения в классах наследниках.</p>
+<p dir="auto">При множественном наследовании данная конструкция является очень полезной.
+В качетсве примера рассмотрим схему наследования, которая называется ромбовидным наследованием:</p>
+<pre><code class="code-line language-mermaid" dir="auto"><code><div>graph LR
+    A --&gt; C --&gt; D
+    A --&gt; B --&gt; D
+</div></code></code></pre>
+<blockquote dir="auto">
+<p dir="auto">Здесь класс A ялвяется наследником классов C и B. Классы C и B, наследуются от D.</p>
+</blockquote>
+
+</main>
+</body>
+</html>
