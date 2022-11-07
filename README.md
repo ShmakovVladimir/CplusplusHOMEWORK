@@ -59,5 +59,17 @@
 ### Урок 7
 
 - [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/README.md)
-- [Классы, описывающие фигуры]()
+- [Классы, описывающие фигуры](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_7)
+    - [Figure.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Figure.h)
+    - [Figure.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Figure.cpp)
+    - [Circle.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Circle.h)
+    - [Circle.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Circle.cpp)
+    - [Ellipse.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Ellipse.h)
+    - [Ellipse.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Ellipse.cpp)
+    - [Square.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Square.h)
+    - [Square.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Square.cpp)
+    - [Point.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Point.h)
+    - [Point.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Point.cpp)
+    - [Rect.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Rect.h)
+    - [Rect.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Rect.cpp)
 
