@@ -56,5 +56,8 @@
     - [Файл с реализацией класса](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_6/task1/task.cpp)
     - [Тест класса](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_6/task1/main.cpp)
 
+### Урок 7
 
+- [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/README.md)
+- [Классы, описывающие фигуры]()
 
