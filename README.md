@@ -9,6 +9,7 @@
     - [Урок 5](#урок-5)
     - [Урок 6](#урок-6)
     - [Урок 7](#урок-7)
+    - [Урок 8](#урок-8)
 ### Урок1
 - [Контрольные вопросы](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_1/questions.md)
 - [Планета Коулун](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_1/A.cpp)
@@ -81,3 +82,6 @@
     - [Rect.h](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Rect.h)
     - [Rect.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_7/Rect.cpp)
 
+### Урок 8
+
+- [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/README.md)
