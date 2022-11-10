@@ -84,3 +84,7 @@
 ### Урок 8
 
 - [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/README.md)
+- [Задание 1 - Обработка ошибок на основе кодов возврата](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task1.cpp)
+    - Реализована функция возвращающая индекс элемента, находящегося посередине между `left` и `right`. Может быть полезна при реализации алгоритмов(например при реализации бинарного поиска)
+- [Задание 2 - Использование исключений](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task2.cpp)
+- 
