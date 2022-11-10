@@ -87,4 +87,8 @@
 - [Задание 1 - Обработка ошибок на основе кодов возврата](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task1.cpp)
     - Реализована функция возвращающая индекс элемента, находящегося посередине между `left` и `right`. Может быть полезна при реализации алгоритмов(например при реализации бинарного поиска)
 - [Задание 2 - Использование исключений](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task2.cpp)
-- 
+- [Задание 3 - Система обработки ошибок в классе дробь](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_8/task3)
+    - ![Пример работы программы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/pics/fracitonExceptionTest.png)
+    - [Заголовочный файл класса дроби](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/fraction.h)
+    - [Файл с реализацией класса дроби](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/fraction.cpp)
+    - [Тест - main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/main.cpp)
