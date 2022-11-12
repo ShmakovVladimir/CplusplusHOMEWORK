@@ -15,10 +15,10 @@ void Ellipse::print() const
 
 double Ellipse::getArea() const
 {
-    return PI*radius1*radius2;
+    return M_PI*radius1*radius2;
 }
 
 double Ellipse::getPerimetr() const
 {
-    return TAU*std::sqrt(std::pow(radius1,2)+std::pow(radius2,2))/std::sqrt(2);
+    return 2*M_PI*std::sqrt(std::pow(radius1,2)+std::pow(radius2,2))/std::sqrt(2);
 }

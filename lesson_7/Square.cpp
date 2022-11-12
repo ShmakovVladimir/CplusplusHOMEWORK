@@ -6,15 +6,15 @@ Square::Square(double side,double rotationAngle,Point center): Rect(side,side,ro
 
 }
 
-double Square::getArea() const
-{
-    return Rect::getArea();
-}
+// double Square::getArea() const
+// {
+//     return Rect::getArea();
+// }
 
-double Square::getPerimetr() const
-{
-    return Rect::getPerimetr();
-}
+// double Square::getPerimetr() const
+// {
+//     return Rect::getPerimetr();
+// }
 
 void Square::print() const
 {

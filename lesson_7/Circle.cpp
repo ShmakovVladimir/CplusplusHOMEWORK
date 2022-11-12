@@ -11,12 +11,12 @@ void Circle::print() const
     std::cout<<"Radius: "<<radius1;
 }
 
-double Circle::getArea() const
-{
-    return Ellipse::getArea();
-}
+// double Circle::getArea() const
+// {
+//     return Ellipse::getArea();
+// }
 
-double Circle::getPerimetr() const
-{
-    return Ellipse::getPerimetr();
-}
+// double Circle::getPerimetr() const
+// {
+//     return Ellipse::getPerimetr();
+// }

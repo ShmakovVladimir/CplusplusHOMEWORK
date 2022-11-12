@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
 #include "Point.h"
-#include "windowProp.hpp"
 #include <iostream>
-#include "MathConstants.hpp"
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <cmath>
 
 class Figure
 {
