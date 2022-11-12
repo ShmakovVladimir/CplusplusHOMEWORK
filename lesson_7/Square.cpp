@@ -1,4 +1,4 @@
-#include "Square.h"
+#include "Square.hpp"
 
 
 Square::Square(double side,double rotationAngle,Point center): Rect(side,side,rotationAngle,center)

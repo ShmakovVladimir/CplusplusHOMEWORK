@@ -1,8 +1,8 @@
-#include "Point.h"
+#include "Point.hpp"
 
 double Point::getLength()
 {
-    return sqrt(pow(x,2)+pow(y,2));
+    return std::sqrt(std::pow(x,2)+std::pow(y,2));
 }
 
 std::ostream& operator<<(std::ostream& outObj,const Point& pointToPrint)

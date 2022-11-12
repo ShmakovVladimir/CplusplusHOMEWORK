@@ -1,6 +1,6 @@
 #pragma once
-#include "Figure.h"
-#include "Ellipse.h"
+#include "Figure.hpp"
+#include "Ellipse.hpp"
 
 class Circle: public Ellipse
 {

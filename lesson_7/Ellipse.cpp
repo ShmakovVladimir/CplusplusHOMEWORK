@@ -1,4 +1,4 @@
-#include "Ellipse.h"
+#include "Ellipse.hpp"
 
 Ellipse::Ellipse(Point center,double rotationAngle,double radius1,double radius2): center{center},radius1{radius1},radius2{radius2},angle{rotationAngle}
 {

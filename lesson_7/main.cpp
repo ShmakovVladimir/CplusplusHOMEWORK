@@ -1,10 +1,10 @@
 #include <iostream>
-#include "Figure.h"
-#include "Rect.h"
-#include "Square.h"
-#include "Circle.h"
-#include "Ellipse.h"
-#include "Point.h"
+#include "Figure.hpp"
+#include "Rect.hpp"
+#include "Square.hpp"
+#include "Circle.hpp"
+#include "Ellipse.hpp"
+#include "Point.hpp"
 
 int main()
 {

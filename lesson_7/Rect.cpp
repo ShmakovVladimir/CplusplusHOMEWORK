@@ -1,4 +1,4 @@
-#include "Rect.h"
+#include "Rect.hpp"
 
 
 Rect::Rect(double sideA,double sideB,double rotationAngle,Point center): sideA{sideA},sideB{sideB},Figure(center),angle{rotationAngle}

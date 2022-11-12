@@ -1,7 +1,7 @@
 #pragma once
 #define _USE_MATH_DEFINES
 #include <vector>
-#include "Point.h"
+#include "Point.hpp"
 #include <iostream>
 #include <cmath>
 

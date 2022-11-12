@@ -1,4 +1,4 @@
-#include "Circle.h"
+#include "Circle.hpp"
 
 Circle::Circle(Point center,double radius): Ellipse(center,0,radius,radius)
 {
