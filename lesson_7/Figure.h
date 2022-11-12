@@ -1,9 +1,8 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include <vector>
 #include "Point.h"
 #include <iostream>
-#define _USE_MATH_DEFINES
-#include <math.h>
 #include <cmath>
 
 class Figure
