@@ -55,6 +55,9 @@ void veryBigArray()
     }
     catch(const std::exception& e)
     {
+        for(int i = 0;i<veryBigNumber;i++)
+            delete[] arr[i];
+        delete[] arr;
         std::cerr << "Problem: "<< e.what();
     }
     
