@@ -19,7 +19,7 @@ class Fraction
         // Fraction operator-(const Fraction& fractionToSub) const;
         // Fraction operator*(const Fraction& fractionToMult) const;
         friend Fraction operator*(const Fraction& frationLeft,const Fraction& fractionRight) noexcept;
-        friend Fraction operator/(const Fraction& fractionLeft,const Fraction& fractionRight) noexcept;
+        friend Fraction operator/(const Fraction& fractionLeft,const Fraction& fractionRight) noexcept(false);
         friend bool operator==(const Fraction& fraction1,const Fraction& fraction2) noexcept;
         // friend Fraction& operator+=(Fraction& fractionLeft,const Fraction& fractionRight);
         // friend Fraction& operator-=(Fraction& fractionLeft,const Fraction& fractionRight);

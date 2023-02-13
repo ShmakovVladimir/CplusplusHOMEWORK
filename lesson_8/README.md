@@ -177,7 +177,7 @@ String evaluate_salary_and_return_name(Employee e)
     }
     else
     {
-        std:: cout << e.name () << " is not overpaid .\n";
+        std::cout << e.name () << " is not overpaid .\n";
     }
     return e.name () + " " + e.surname ();
 }
@@ -225,4 +225,4 @@ String evaluate_salary_and_return_name(Employee e)
 
 **Итог 27+3 = 30**
 
-
+ 

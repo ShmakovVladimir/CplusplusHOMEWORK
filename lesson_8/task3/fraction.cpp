@@ -78,7 +78,7 @@ Fraction operator*(const Fraction& fractionLeft,const Fraction& fractionRight) n
     return Fraction(fractionLeft.numerator*fractionRight.numerator,fractionLeft.denominator*fractionRight.denominator).reduceFraction();
 }
 
-Fraction operator/(const Fraction& fractionLeft,const Fraction& fractionRight) noexcept
+Fraction operator/(const Fraction& fractionLeft,const Fraction& fractionRight) noexcept(false)
 {
     return fractionLeft*(fractionRight.getInverced());
 }
