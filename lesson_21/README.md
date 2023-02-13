@@ -10,10 +10,8 @@
 
 ### Пункт 1
 
-Добавляем в код две функции `someFunc` и `anotherFunc`. Сначала закоммитим функцию someFunc:
+Добавляем в код две функции `someFunc` и `anotherFunc`. Сначала закоммитим функцию someFunc, а потом anotherFunc:
 
 ![Img](steps/step_3.png)
-
-Теперь добавим функцию `anotherFunc`:
 
 ![Img](steps/step_4.png)
