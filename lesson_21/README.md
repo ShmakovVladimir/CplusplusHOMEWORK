@@ -15,3 +15,35 @@
 ![Img](steps/step_3.png)
 
 ![Img](steps/step_4.png)
+
+### Пункт 2
+
+Добавим функцию `newBranchFunc`. И зафиксируем изменение в новой ветке `newBranch`
+
+![Img](steps/step_5.png)
+
+Как видим, изменения не попали в ветку master:
+
+![Img](steps/step_6.png)
+
+В ветке `newBranch` изменения присутствуют:
+
+![Img](steps/step_7.png)
+
+Добавим изменения в ветку master:
+
+![Img](steps/step_8.png)
+
+Как видим, новая функция `newBracnchFunc` присутствует и в master
+
+![Img](steps/step_9.png)
+
+Удалим ветку `newBranch`:
+
+![Img](steps/step_10.png)
+
+Теперь в репозитории только одна ветка master:
+
+![Img](steps/step_11.png)
+
+
