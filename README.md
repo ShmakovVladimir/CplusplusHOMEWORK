@@ -1,6 +1,7 @@
 # C++ Домашние задания 
 **Шмаков Владимир Б04-105**
 - [C++ Домашние задания](#c-домашние-задания)
+- [Семестр 3](#семестр-3)
     - [Урок 1](#урок-1)
     - [Урок 2](#урок-2)
     - [Урок 3](#урок-3)
@@ -9,6 +10,10 @@
     - [Урок 6](#урок-6)
     - [Урок 7](#урок-7)
     - [Урок 8](#урок-8)
+- [Семестр 4](#семестр-4)
+    - [Семинар 2](#семинар-2)
+
+# Семестр 3
 ### Урок 1
 - [Контрольные вопросы](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_1/questions.md)
 - [Планета Коулун](https://github.com/ShmakovVladimir/Csnussnus/blob/main/lesson_1/A.cpp)
@@ -92,3 +97,9 @@
     - [Заголовочный файл класса дроби](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/fraction.h)
     - [Файл с реализацией класса дроби](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/fraction.cpp)
     - [Тест - main.cpp](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_8/task3/main.cpp)
+
+# Семестр 4
+
+### Семинар 2
+ -  [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_22/README.md)
+ -  [Реализация бинарного поиска с помощью итераторов](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_22/task3)
