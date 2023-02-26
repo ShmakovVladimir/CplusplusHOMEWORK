@@ -11,7 +11,7 @@
     - [Урок 7](#урок-7)
     - [Урок 8](#урок-8)
 - [Семестр 4](#семестр-4)
-    - [Семинар 2](#семинар-2)
+    - [Урок 2](#урок-2-1)
 
 # Семестр 3
 ### Урок 1
@@ -100,6 +100,6 @@
 
 # Семестр 4
 
-### Семинар 2
+### Урок 2
  -  [Контрольные вопросы](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_22/README.md)
  -  [Реализация бинарного поиска с помощью итераторов](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/tree/main/lesson_22/task3)
