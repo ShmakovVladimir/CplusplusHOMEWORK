@@ -1,0 +1,1 @@
+- [Лекция Мещерина про умные указатели](https://www.youtube.com/watch?v=B0IDDvzvHeU&list=PLmSYEYYGhnBu1fFtnzKx-pycYbJnb0rOl&index=26)
