@@ -4,53 +4,64 @@
 
 template <typename T>
 class Tree {
-    class Node {
-        public:
-            std::weak_ptr<Node> parent;
-            std::shared_ptr<Node> child_left;
-            std::shared_ptr<Node> child_right;
-            T value;
+    private: 
+        class Node {
+            public:
+                Node(const T& val) : value(val), childLeft(nullptr), childRight(nullptr) {}
+                
+                ~Node() {
+                std::cout << "Node with data = " << value << " deleted" << std::endl;
+                value.~T();
+                }
 
-            Node(const T& val) : value(val), child_left(nullptr), child_right(nullptr) {}
+                std::weak_ptr<Node> parent;
+                std::shared_ptr<Node> childLeft;
+                std::shared_ptr<Node> childRight;
+                T value;
+        };
 
-            ~Node() {
-            std::cout << "Node with data" << value << "deleted" << std::endl;
-            value.~T();
+        void AppendLeft(const T& val) {
+            active->childLeft = std::make_shared<Node>(val); 
+            active->childLeft->parent = std::weak_ptr<Node>(active);
+        }
+
+        void AppendRight(const T& val) {
+            active->childRight = std::make_shared<Node>(val);
+            active->childRight->parent = std::weak_ptr<Node>(active);
+        }
+        std::shared_ptr<Node> root;
+        std::shared_ptr<Node> active;
+
+    public:
+        Tree(const T& val) {
+            root = std::make_shared<Node>(val);
+            active = root;
+        }
+
+        void append(const T& val)
+        {
+            if(val <= (active->value) && !active->childLeft)
+            {
+                std::cout << "Left appended" << std::endl;
+                AppendLeft(val);
             }
-    };
-
-    std::shared_ptr<Node> head;
-    std::shared_ptr<Node> active;
-public:
-    void AppendLeft(const T& val) {
-        active->child_left = std::make_shared<Node>(val); 
-        active->child_left->parent = std::weak_ptr<Node>(active);
-    }
-
-    void AppendRight(const T& val) {
-        active->child_right = std::make_shared<Node>(val);
-        active->child_right->parent = std::weak_ptr<Node>(active);
-    }
-    Tree(const T& val) {
-        head = std::make_shared<Node>(val);
-        active = head;
-    }
-    void append(const T& val)
-    {
-        if(val <= (active->value) && !active->child_left)
-            AppendLeft(val);
-        else if(val <= active->value)
-        {
-            active = active->child_left;
-            append(val);
+            else if(val <= active->value)
+            {
+                std::cout << "New level added(from left)" << std::endl;
+                active = (active->childLeft);
+                append(val);
+            }
+            if(val > active->value && !active->childRight)
+            {
+                std::cout << "Right appended" << std::endl;
+                AppendRight(val);
+            }
+            else if(val > active->value)
+            {
+                std::cout << "New level added(from right)" << std::endl;
+                active = (active->childRight);
+                append(val);
+            }
         }
-         if(val > active->value && !active->child_left)
-            AppendRight(val);
-        else if(val > active->value)
-        {
-            active = active->child_right;
-            append(val);
-        }
-    }
 
 };

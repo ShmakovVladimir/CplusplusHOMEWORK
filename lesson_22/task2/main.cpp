@@ -11,13 +11,13 @@ int main()
 {
     Tree<int> tree(20);
     // добавление в левую часть
-    tree.AppendRight(18);
+    tree.append(18);
     // добавление в правую часть
-    tree.AppendLeft(21);
+    tree.append(21);
     // правое справа
-    tree.AppendRight(22);
+    tree.append(22);
     // слева от правой части
-    tree.AppendLeft(21);
+    tree.append(21);
 
     return 0;
 }
