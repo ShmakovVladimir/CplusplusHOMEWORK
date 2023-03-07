@@ -18,6 +18,14 @@ int main()
     tree.append(22);
     // слева от правой части
     tree.append(21);
+    tree.append(22);
+    tree.append(100);
+    tree.append(11);
+    tree.append(12);
+    tree.append(134);
 
+    std::cout<<std::endl<<std::endl;
+    tree.print();
+    std::cout<<std::endl<<std::endl;
     return 0;
 }

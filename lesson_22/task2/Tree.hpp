@@ -29,6 +29,24 @@ class Tree {
             active->childRight = std::make_shared<Node>(val);
             active->childRight->parent = std::weak_ptr<Node>(active);
         }
+
+        //функция print с stackoverflow
+        void printBT(const std::string& prefix, std::shared_ptr<Node> node, bool isLeft)
+        {
+            if( node != nullptr )
+            {
+                if( node != root)
+                    std::cout << (isLeft ? "/──" : "-──" );
+
+        // print the value of the node
+            std::cout << node->value << std::endl;
+
+        // enter the next tree level - left and right branch
+            printBT(prefix + (isLeft ? "│   " : "+++"), node->childLeft, true);
+            printBT(prefix + (isLeft ? "│   " : "+++"), node->childRight, false);
+            }
+        }
+
         std::shared_ptr<Node> root;
         std::shared_ptr<Node> active;
 
@@ -62,6 +80,11 @@ class Tree {
                 active = (active->childRight);
                 append(val);
             }
+        }
+
+        void print()
+        {
+            printBT("+", root, false);
         }
 
 };
