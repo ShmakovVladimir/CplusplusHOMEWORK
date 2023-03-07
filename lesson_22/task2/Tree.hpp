@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <iostream>
+#include <string>
 
 template <typename T>
 class Tree {
@@ -36,14 +37,14 @@ class Tree {
             if( node != nullptr )
             {
                 if( node != root)
-                    std::cout << (isLeft ? "/──" : "-──" );
+                    std::cout << (isLeft ? "/---" : "----" );
 
         // print the value of the node
             std::cout << node->value << std::endl;
-
+            std::string newPrefix = (isLeft ? "/---" : "----" ) + prefix;
         // enter the next tree level - left and right branch
-            printBT(prefix + (isLeft ? "│   " : "+++"), node->childLeft, true);
-            printBT(prefix + (isLeft ? "│   " : "+++"), node->childRight, false);
+            printBT(newPrefix + (isLeft ? "/   -" : "----"), node->childLeft, true);
+            printBT(newPrefix + (isLeft ? "/   -" : "----"), node->childRight, false);
             }
         }
 
