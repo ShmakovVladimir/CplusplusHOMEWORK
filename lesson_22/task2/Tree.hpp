@@ -14,7 +14,7 @@ class Tree {
             Node(const T& val) : value(val), child_left(nullptr), child_right(nullptr) {}
 
             ~Node() {
-            std::cout << "Node with value " << value << " is deleted" << std::endl;
+            std::cout << "Node with data" << value << "deleted" << std::endl;
             value.~T();
             }
     };
