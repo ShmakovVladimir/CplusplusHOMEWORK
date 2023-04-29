@@ -26,7 +26,5 @@ int main(int argc, char** argv)
 
     Matrix C = A*B;
     C.write_matrix(out_c);
-
-    std::cout << "Тут вывод времени выполнения";
     return 0;
 }
