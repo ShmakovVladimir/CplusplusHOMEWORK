@@ -109,4 +109,8 @@
 
 ### Урок 7 - многопоточное программирование
 
-- [Контрольные вопросы]
+- [Контрольные вопросы и пояснения к решенным задачам](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/README.md)
+- [Jupyter для проведения тестов](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/main.ipynb)
+- [Однопоточная реализация алгоритма монте - карло](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/monte_carlo/one_thread.cpp)
+- [Многопоточная реализация с правильным использованием разделямых ресурсов](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/monte_carlo/eight_threads.cpp)
+- [Многопоточная реализация без mutex](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/monte_carlo/time_by_iteration_count_test.cpp)
