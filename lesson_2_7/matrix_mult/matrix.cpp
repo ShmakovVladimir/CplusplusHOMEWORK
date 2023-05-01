@@ -32,18 +32,16 @@ void Matrix::write_matrix(std::ofstream &out_file)
 Matrix Matrix::operator*(Matrix& b)
 {
     LogDuration lg("");
-    // if (!(b.get_cols() - rows_num))
-    //      std::cout << "Error" << std::endl;
     Matrix result(rows_num, b.get_cols(), false);
     std::vector<std::thread> threads(threads_num);
     int row_split_step = int(rows_num / threads_num);
+    int end = 0;
     for(int thread_ind = 0; thread_ind < threads_num; thread_ind++)
     {
-        int start = thread_ind * row_split_step;
-        int end = (thread_ind + 1) * row_split_step;
+        int start = end;
+        end += row_split_step + 1;
         if(thread_ind == threads_num - 1)
             end = rows_num;
-        //matrix_multiplication_split(b, result, start, end);
         threads[thread_ind] = std::thread(&Matrix::matrix_multiplication_split, 
                                           this, 
                                           std::ref(b), 
@@ -61,14 +59,16 @@ Matrix Matrix::operator*(Matrix& b)
 void Matrix::matrix_multiplication_split(Matrix& b, Matrix& result, int row_start, int row_end)
 {
     int b_rows_num = b.get_rows();
+    int b_cols_num = b.get_cols();
     for(int a_row = row_start; a_row < row_end; a_row++)
     {
-        int a_pl_index = a_row * rows_num;
-        for(int b_col = 0; b_col < b.get_cols(); b_col++)
+        int a_plus_ind = a_row * rows_num;
+        for(int b_col = 0; b_col < b_cols_num; b_col++ )
         {
+            int result_ind = a_plus_ind + b_col;
             for(int n = 0; n < columns_num; n++)
             {
-                result(a_row, b_col) += b.data[n * b_rows_num + b_col] * data[a_pl_index + n];
+                result.data[result_ind] += data[a_plus_ind + n] * b.data[n * b_rows_num + b_col];
             }
         }
     }
