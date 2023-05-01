@@ -9,4 +9,21 @@
 
 ### Многопоточная реализация алгоритма Монте - Карло для оценки числа $\pi$
 
-- 
+- [Однопоточная реализация](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/monte_carlo/one_thread.cpp)
+- [Многопоточная реализация - с использованием `mutex`](https://github.com/ShmakovVladimir/CplusplusHOMEWORK/blob/main/lesson_2_7/monte_carlo/eight_threads.cpp)
+
+Получили следующие результаты:
+
+![Alt text](monte_carlo_one_thread.png)
+> Однопоточная реализация
+
+![Alt text](monte_carlo_eight_threads.png)
+> Многопоточная реализация
+
+**Вывод**
+
+Как видим, многопоточная реализация работает медленнее однопоточной. Почему так происходит? 
+
+Моя версия заключается в том, что большинство временных затрат уходят на работу с разделяемыми ресурсами(переменная `in_circle`, запись в файл). Из - за использования `mutex` эти операции проводятся по - сути в однопоточном режиме. 
+
+Бес использования `mutex` [Многопоточная реализация без использования mutex](monte_carlo/time_by_iteration_count_test.cpp). 
