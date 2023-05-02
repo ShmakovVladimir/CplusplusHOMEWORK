@@ -6,13 +6,6 @@
 template <typename type>
 void MergeSort(std::vector<type> &arr, std::size_t thread_num = 4)
 {
-    // MergeSort(A, p, r):
-    // if p > r 
-    //     return
-    // q = (p+r)/2
-    // mergeSort(A, p, q)
-    // mergeSort(A, q+1, r)
-    // merge(A, p, q, r)
     void merge_sort(int start, int end)
     {
         if(start > end)
@@ -21,6 +14,13 @@ void MergeSort(std::vector<type> &arr, std::size_t thread_num = 4)
         merge_sort(start, mid);
         merge_sort(mid + 1, start);
         merge(start, mid, end);
+    }
+
+    void merge(int start, int middle, int end)
+    {
+        int left_pointer = start;
+        int right_pointer = end;
+        
     }
 }
 
