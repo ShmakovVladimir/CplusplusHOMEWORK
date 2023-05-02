@@ -14,10 +14,10 @@
 
 Получили следующие результаты:
 
-![Alt text](monte_carlo_one_thread.png)
+![Alt text](pics/monte_carlo_one_thread.png)
 > Однопоточная реализация
 
-![Alt text](monte_carlo_eight_threads.png)
+![Alt text](pics/monte_carlo_eight_threads.png)
 > Многопоточная реализация
 
 **Вывод**
@@ -28,9 +28,9 @@
 
 Если не использовать `mutex`: [многопоточная реализация без использования mutex](monte_carlo/time_by_iteration_count_test.cpp). Получаем логичный результат(чем больше потоков, тем быстрее):
 
-![Alt text](time_by_thread_q_monte_carlo.png)
+![Alt text](pics/time_by_thread_q_monte_carlo.png)
 
 Однако в данном случае разделяемые ресурсы используются неправильно, вследствие чего алгоритм работает не так, как нужно:
 
-![Alt text](error_by_thread_count_monte_carlo.png)
+![Alt text](pics/error_by_thread_count_monte_carlo.png)
 

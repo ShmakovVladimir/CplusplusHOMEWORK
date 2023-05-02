@@ -20,15 +20,21 @@ void MergeSort(std::vector<type> &arr, std::size_t thread_num = 4)
     {
         int left_pointer = start;
         int right_pointer = end;
-        
+        while(left_pointer <= middle and right_pointer > middle)
+        {
+            if(arr[left_pointer] <= arr[right_pointer])
+                left_pointer++;
+            else{
+              std::swap(arr[right_pointer], arr[left_pointer]);
+              right_pointer--;  
+            } 
+        }
     }
 }
 
 
 int main(int argc, char** argv)
 {
-
-
 
     return 0;
 }
